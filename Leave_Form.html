@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Leave Request Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      padding: 40px;
+    }
+    form {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      width: 400px;
+      margin: auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    input, select, textarea, button {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+    }
+    button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+  <h2 style="text-align:center;">Leave Request Form</h2>
+
+  <form id="leaveForm">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="text" name="department" placeholder="Department" required>
+    <select name="leaveType" required>
+      <option value="">Select Leave Type</option>
+      <option value="Sick Leave">Sick Leave</option>
+      <option value="Annual Leave">Annual Leave</option>
+      <option value="Emergency Leave">Emergency Leave</option>
+    </select>
+    <input type="date" name="startDate" required>
+    <input type="date" name="endDate" required>
+    <textarea name="reason" placeholder="Reason for Leave" required></textarea>
+    <button type="submit">Submit</button>
+  </form>
+
+  <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbzvyGH9kyYAezT2AAfn5D1h1dTN1ZuWfei5TNa1kVmFVqJXQUNv8pkbchz-dV6XTxBNuw/exec';
+    const form = document.getElementById('leaveForm');
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => alert("Leave request sent successfully!"))
+        .catch(error => alert("Error: " + error.message))
+    });
+  </script>
+
+</body>
+</html>
