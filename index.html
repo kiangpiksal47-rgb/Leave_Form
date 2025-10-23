@@ -135,8 +135,12 @@
     </select>
 
     <div class="date-row">
-  <input type="date" name="startDate" required>
-  <input type="date" name="endDate" required>
+  
+  <input type="text" id="startDate" placeholder="Start Date"
+       onfocus="(this.type='date')" onblur="(this.type='text')">
+<input type="text" id="endDate" placeholder="End Date"
+       onfocus="(this.type='date')" onblur="(this.type='text')">
+
   
 </div>
 
