@@ -1,56 +1,110 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <form style="text-align: center;"> 
-  <img src="https://media.licdn.com/dms/image/v2/D560BAQGf3aEJqk8Rpg/company-logo_200_200/company-logo_200_200/0/1701654770138?e=2147483647&v=beta&t=h2N_4qcnQTDixsgDjMALQn0BZ1_HSGbADPJbqONbS3g"  width="140">
-  </form>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Leave Request Form</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: #f9f9f9;
-      padding: 40px;
+      background: #f0f4f8;
+      margin: 0;
+      padding: 20px;
     }
+
+    .logo {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .logo img {
+      width: 120px;
+      height: auto;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 15px;
+      color: #333;
+    }
+
     form {
       background: white;
-      padding: 65px;
-      border-radius: 9px;
-      width: 400px;
+      padding: 25px;
+      border-radius: 10px;
+      max-width: 480px;
       margin: auto;
-      box-shadow: 0 0 10px rgba(5, 192, 244, 0.1);
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      box-sizing: border-box;
     }
+
     input, select, textarea, button {
       width: 100%;
-      padding: 10px;
-      margin: 9px 0;
+      padding: 12px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+      box-sizing: border-box;
     }
+
+    textarea {
+      min-height: 90px;
+      resize: vertical;
+    }
+
     button {
-      background-color: #44a1f1;
+      background-color: #007bff;
       color: white;
       border: none;
       cursor: pointer;
+      font-size: 1rem;
+      border-radius: 6px;
     }
+
     button:hover {
-      background-color: #a631dc;
+      background-color: #0056b3;
+    }
+
+    /* Responsive design */
+    @media (max-width: 480px) {
+      body {
+        padding: 10px;
+      }
+      form {
+        padding: 18px;
+      }
+      input, select, textarea, button {
+        font-size: 0.95rem;
+      }
     }
   </style>
 </head>
 <body>
 
-  <h2 style="text-align:center;">Leave Request Form</h2>
+  <div class="logo">
+    <img src="https://media.licdn.com/dms/image/v2/D560BAQGf3aEJqk8Rpg/company-logo_200_200/company-logo_200_200/0/1701654770138?e=2147483647&v=beta&t=h2N_4qcnQTDixsgDjMALQn0BZ1_HSGbADPJbqONbS3g" alt="Company Logo">
+  </div>
+
+  <h2>Leave Request Form</h2>
 
   <form id="leaveForm">
     <input type="text" name="name" placeholder="Your Name" required>
     <input type="text" name="department" placeholder="Department" required>
+
     <select name="leaveType" required>
       <option value="">Select Leave Type</option>
       <option value="Sick Leave">Sick Leave</option>
       <option value="Annual Leave">Annual Leave</option>
       <option value="Emergency Leave">Emergency Leave</option>
     </select>
+
     <input type="date" name="startDate" required>
     <input type="date" name="endDate" required>
+
     <textarea name="reason" placeholder="Reason for Leave" required></textarea>
+
     <button type="submit">Submit</button>
   </form>
 
@@ -61,8 +115,11 @@
     form.addEventListener('submit', e => {
       e.preventDefault();
       fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-        .then(response => alert("Leave request sent successfully!"))
-        .catch(error => alert("Error: " + error.message))
+        .then(() => {
+          alert("✅ Leave request sent successfully!");
+          form.reset();
+        })
+        .catch(error => alert("❌ Error: " + error.message));
     });
   </script>
 
