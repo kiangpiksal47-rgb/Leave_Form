@@ -148,22 +148,28 @@
   </form>
 
   <script>
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbwAb3jVaRwoemmc91rj_F_Mws7eaXsNX-bC1QQcxYwTMsvG8C2FQlaU0pM9qP6PtJVr9A/exec';
-    const form = document.getElementById('leaveForm');
+const scriptURL = 'https://script.google.com/macros/s/AKfycbwAb3jYaRwomemC91rj_F_Ms7eaxSNi-bCiQQXMYMt5V8G2FQIaWp8gPGPtJvY9A/exec';
+const form = document.getElementById('leaveForm');
 
-    form.addEventListener('submit', e => {
-      e.preventDefault();
-      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-        .then(() => {
-          alert("✅ Leave request sent successfully!");
-          form.reset();
-        })
-        .catch(error => alert("❌ Error: " + error.message));
-    });
-  </script>
+form.addEventListener('submit', e => {
+  e.preventDefault(); // stop form from reloading page
+
+  fetch(scriptURL, { 
+      method: 'POST', 
+      mode: 'no-cors',  // <-- THIS IS IMPORTANT
+      body: new FormData(form)
+  })
+  .then(() => {
+      alert("✅ Leave request sent successfully!");
+      form.reset();
+  })
+  .catch(error => alert("❌ Error: " + error.message));
+});
+</script>
 
 </body>
 </html>
+
 
 
 
