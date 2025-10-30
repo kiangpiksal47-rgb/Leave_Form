@@ -94,6 +94,17 @@
 }
 
 .date-row input[type="date"] {
+.date-row input[type="date"]::-webkit-datetime-edit,
+.date-row input[type="date"]::-webkit-inner-spin-button,
+.date-row input[type="date"]::-webkit-clear-button {
+  display: none;
+}
+
+.date-row input[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0.6;
+  cursor: pointer;
+  padding-right: 10px;
+}
   flex: 1;
   -webkit-appearance: none;
   appearance: none;
@@ -175,6 +186,7 @@ form.addEventListener('submit', e => {
 
 </body>
 </html>
+
 
 
 
