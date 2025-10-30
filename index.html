@@ -125,14 +125,16 @@
 
   <form id="leaveForm">
     <input type="text" name="name" placeholder="Your Name" required></input>
-    <select> name="Department" required>
-      <option value="">Select Department Type</option>
-      <option value="Facility">Facility</option>
-      <option value="Admin and HR">Admin and HR</option>
-      <option value="Client Releation">Client Releation</option>
+   <select name="department" required>
+  <option value="">Select Department Type</option>
+  <option value="Facility">Facility</option>
+  <option value="Admin and HR">Admin and HR</option>
+  <option value="Client Releation">Client Releation</option>
+</select>
+
     
 
-       name="leaveType" required>
+       <select name="leaveType" required>
       <option value="">Select Leave Type</option>
       <option value="Sick Leave">Sick Leave</option>
       <option value="Annual Leave">Annual Leave</option>
@@ -174,6 +176,7 @@ form.addEventListener('submit', e => {
 
 </body>
 </html>
+
 
 
 
