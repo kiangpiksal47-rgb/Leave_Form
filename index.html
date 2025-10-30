@@ -147,9 +147,9 @@
   
 </div>
 
-    <textarea name="reason" placeholder="Reason for Leave" required></textarea>
+    <textarea name="reason" placeholder="មូលហេតុឈប់" required></textarea>
 
-    <button type="submit">Submit</button>
+    <button type="submit">បញ្ជូន</button>
   </form>
 
   <script>
@@ -165,7 +165,7 @@ form.addEventListener('submit', e => {
       body: new FormData(form)
   })
   .then(() => {
-      alert("✅ Leave request sent successfully!");
+      alert("✅ ការស្នើសុំត្រូវបានបញ្ជូន!");
       form.reset();
   })
   .catch(error => alert("❌ Error: " + error.message));
@@ -174,6 +174,7 @@ form.addEventListener('submit', e => {
 
 </body>
 </html>
+
 
 
 
