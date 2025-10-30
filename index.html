@@ -135,7 +135,7 @@
     <img src="https://media.licdn.com/dms/image/v2/D560BAQGf3aEJqk8Rpg/company-logo_200_200/company-logo_200_200/0/1701654770138?e=2147483647&v=beta&t=h2N_4qcnQTDixsgDjMALQn0BZ1_HSGbADPJbqONbS3g" alt="Company Logo">
   </div>
 
- <h2>សំណើសុំច្បាប់ឈប់សម្រាក</h2>
+ <h2>ទម្រង់ស្នើសុំច្បាប់ឈប់សម្រាក</h2>
 
 <form id="leaveForm" method="POST" action="YOUR_WEB_APP_URL">
   <input type="text" name="name" placeholder="បញ្ចូលឈ្មោះរបស់អ្នក" required>
@@ -146,17 +146,19 @@
     <option value="ផ្នែកសន្តិសុខ">ផ្នែកសន្តិសុខ</option>
     <option value="ផ្នែកបច្ចេកទេស">ផ្នែកបច្ចេកទេស</option>
     <option value="ផ្នែករដ្ឋបាលនិងធនធានមនុស្ស">ផ្នែករដ្ឋបាលនិងធនធានមនុស្ស</option>
-    <option value="ផ្នែកបរិក្ខាអគារ">ផ្នែកបរិក្ខាអគារ</option>
+    <option value="ផ្នែកគេហកិច្ច">ផ្នែកគេហកិច្ច</option>
+    <option value="ផ្នែកចំណត">ផ្នែកចំណត</option>
+    <option value="ផ្នែកទីផ្សារ">ផ្នែកទីផ្សារ</option>
+    <option value="ផ្នែកលក់">ផ្នែកលក់</option>
   </select>
 
   <!-- ✅ Fix: change name="Leave Type" → name="leaveType" -->
   <select name="leaveType" required>
     <option value="">ជ្រើសប្រភេទឈប់សម្រាក</option>
     <option value="ឈប់សម្រាកដោយសារជំងឺ">ឈប់សម្រាកដោយសារជំងឺ</option>
-    <option value="Annual Leave">ឈប់សម្រាកប្រចាំឆ្នាំ</option>
-    <option value="Emergency Leave">ឈប់សម្រាកបន្ទាន់</option>
+    <option value="ឈប់សម្រាកប្រចាំឆ្នាំ(AL">ឈប់សម្រាកប្រចាំឆ្នាំ(AL)</option>
+    <option value="ឈប់សម្រាកបន្ទាន់">ឈប់សម្រាកបន្ទាន់</option>
   </select>
-
   <input type="date" name="startDate" required>
   <input type="date" name="endDate" required>
   <textarea name="reason" placeholder="បញ្ចូលហេតុផល" required></textarea>
@@ -187,6 +189,7 @@ form.addEventListener('submit', e => {
 
 </body>
 </html>
+
 
 
 
