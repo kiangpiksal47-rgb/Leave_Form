@@ -121,36 +121,34 @@
     <img src="https://media.licdn.com/dms/image/v2/D560BAQGf3aEJqk8Rpg/company-logo_200_200/company-logo_200_200/0/1701654770138?e=2147483647&v=beta&t=h2N_4qcnQTDixsgDjMALQn0BZ1_HSGbADPJbqONbS3g" alt="Company Logo">
   </div>
 
-  <h2>ទម្រង់សុំអនុញ្ញាតិច្បាប់</h2>
+ <h2>សំណើសុំច្បាប់ឈប់សម្រាក</h2>
 
-  <form id="leaveForm">
-    <input type="text" name="name" placeholder="ឈ្មោះរបស់អ្នក" required></input>
-    
-   <select name="Department" required>
-  <option value="">ជ្រើសរើសផ្នែក</option>
-  <option value="ផ្នែកបរិក្ខាអគារ">ផ្នែកបរិក្ខាអគារ</option>
-  <option value="ផ្នែករដ្ឋបាល">ផ្នែករដ្ឋបាល</option>
-  <option value="ផ្នែកទំនាកទំនងអតិថិជន">ផ្នែកទំនាកទំនងអតិថិជន</option>
-   </select>
-     <select name="Leave Type" required>
-      <option value="">ប្រភេទនៃការសុំច្បាប់</option>
-      <option value="Sick Leave">សុខភាព</option>
-      <option value="Annual Leave">ឃ្លាAL</option>
-      <option value="ច្បាប់បន្ទាន់">ច្បាប់បន្ទាន់</option>
-    </select>
+<form id="leaveForm" method="POST" action="YOUR_WEB_APP_URL">
+  <input type="text" name="name" placeholder="បញ្ចូលឈ្មោះរបស់អ្នក" required>
 
-    <div class="date-row">
-  
-   <input type="date" name="startDate" required>
-    <input type="date" name="endDate" required>
+  <!-- ✅ Fix: change name="Department" → name="department" -->
+  <select name="department" required>
+    <option value="">ជ្រើសរើសផ្នែក</option>
+    <option value="ផ្នែកសន្តិសុខ">ផ្នែកសន្តិសុខ</option>
+    <option value="ផ្នែកបច្ចេកទេស">ផ្នែកបច្ចេកទេស</option>
+    <option value="ផ្នែករដ្ឋបាលនិងធនធានមនុស្ស">ផ្នែករដ្ឋបាលនិងធនធានមនុស្ស</option>
+  </select>
 
-  
-</div>
+  <!-- ✅ Fix: change name="Leave Type" → name="leaveType" -->
+  <select name="leaveType" required>
+    <option value="">ជ្រើសប្រភេទឈប់សម្រាក</option>
+    <option value="Sick Leave">ឈប់សម្រាកដោយសារជំងឺ</option>
+    <option value="Annual Leave">ឈប់សម្រាកប្រចាំឆ្នាំ</option>
+    <option value="Emergency Leave">ឈប់សម្រាកបន្ទាន់</option>
+  </select>
 
-    <textarea name="reason" placeholder="មូលហេតុឈប់" required></textarea>
+  <input type="date" name="startDate" required>
+  <input type="date" name="endDate" required>
+  <textarea name="reason" placeholder="បញ្ចូលហេតុផល" required></textarea>
 
-    <button type="submit">បញ្ជូន</button>
-  </form>
+  <button type="submit">ដាក់ស្នើ</button>
+</form>
+
 
   <script>
 const scriptURL = 'https://script.google.com/macros/s/AKfycbxG_nd9aEdbqKNBnhZEpbnXAxMnvKBUxezKegESdN203w59LY0rWC1J1wdBhJUnIUcSUA/exec';
@@ -174,6 +172,7 @@ form.addEventListener('submit', e => {
 
 </body>
 </html>
+
 
 
 
